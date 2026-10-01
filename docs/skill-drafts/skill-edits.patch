@@ -1,0 +1,191 @@
+diff -ru a/broker-intelligence-research/SKILL.md b/broker-intelligence-research/SKILL.md
+--- a/broker-intelligence-research/SKILL.md	2026-10-01 09:10:03.105729023 +0000
++++ b/broker-intelligence-research/SKILL.md	2026-10-01 09:10:03.108208058 +0000
+@@ -1,6 +1,6 @@
+ ---
+ name: broker-intelligence-research
+-description: "Run FocusFirst's Broker Intelligence Research service end to end — the flat-fee ($1,500/case, trial basis) supply-chain accountability work-up for plaintiff CMV and delivery-network cases: intake client materials, map the chain, run every applicable module (federal record spine, broker unmasking and pool profile, double-broker screen, date-of-loss carrier fitness, vetting-vendor layer, control/employer analysis, network accountability, OSI pattern pass, monitors, legal posture, SME board), and synthesize the Supply Chain Accountability Playbook. Trigger on: new BIR engagement, broker intelligence research, run the work-up, the $1,500 work-up, build the playbook, supply chain accountability playbook, client sent materials for the broker work-up, [client] wants the broker intelligence service, what's the scheme in this chain — and whenever a client firm submits case materials under the flat-fee service. Orchestrates the module skills; for one module alone use that skill directly."
++description: "Run FocusFirst's Broker Intelligence Research service end to end — the flat-fee (USD 2,500/case) supply-chain accountability work-up for plaintiff CMV and delivery-network cases: intake client materials, map the chain, run every applicable module (federal record spine, broker unmasking and pool profile, double-broker screen, date-of-loss carrier fitness, vetting-vendor layer, control/employer analysis, network accountability, OSI pattern pass, monitors, legal posture, SME board), and synthesize the Supply Chain Accountability Playbook. Trigger on: new BIR engagement, broker intelligence research, run the work-up, the 2,500 work-up (formerly the 1,500 trial work-up), build the playbook, supply chain accountability playbook, client sent materials for the broker work-up, [client] wants the broker intelligence service, what's the scheme in this chain — and whenever a client firm submits case materials under the flat-fee service. Orchestrates the module skills; for one module alone use that skill directly."
+ license: FocusFirst Proprietary — for use under FocusFirst engagements
+ ---
+ 
+@@ -10,11 +10,13 @@
+ 
+ **It performs no primary analysis.** It orchestrates the modules, reads `chain.json`, and synthesizes. If synthesis exposes a conflict between modules, resolve it **in the module** — re-run the pull — never in the Playbook prose.
+ 
++> **Dollar amounts in this file are written with a USD prefix, for example "USD 2,500".** A dollar sign directly before digits and a comma can be corrupted when SKILL.md is saved (see the engagement-letter skill). In client-facing output always use a dollar sign instead. Reference files under `references/` keep normal dollar signs.
++
+ ## What this service is
+ 
+ BIR is FocusFirst's break-out service for plaintiff trial lawyers: a flat-fee, per-case deep work-up of the entire transportation chain behind a crash. The client firm sends case facts and materials; FocusFirst returns the **Supply Chain Accountability Playbook** — one consistent flagship deliverable naming every party in the chain, mapping what each knew or could have seen about the danger, and laying out the sequenced campaign that forces each of them to produce their file.
+ 
+-**Commercial terms:** $1,500 flat per case, trial basis. A full fee for a completed work-up, not a retainer. If the client takes the case forward with FocusFirst, the full $1,500 credits against their first focus group on the same case. BIR is the front door to the core engagement — **the work-up must be good enough that the focus group feels inevitable.**
++**Commercial terms:** USD 2,500 flat per case (rate card, effective 2026-07-28; BIR is the delivery of the rate card's Tier 1, Supply Chain Research & Discovery Support). A full fee for a completed work-up, not a retainer. No pass-throughs. Includes three working calls and three written recommendation rounds within 90 days. If the client takes the case forward with FocusFirst, the full USD 2,500 credits against the focus group **fee** (never against recruiting or participant pass-throughs) — one time, this case, non-stacking, within twelve months, shown as a visible discount line on the invoice. Exact mechanics live in `references/service-collateral.md`; the rate card governs if they ever disagree. BIR is the front door to the core engagement — **the work-up must be good enough that the focus group feels inevitable.**
+ 
+ **The operating thesis.** The modern freight economy rewards looking away. Shippers tender to brokers so they never see the carrier. Brokers run volume so thin that vetting is a checkbox. Carriers re-sell loads to operators nobody vetted at all. And the network giants have built corporate architectures whose function is to exercise control over drivers while disclaiming responsibility for them. Scope: **any scheme, by any party to the supply chain, that turns a blind eye to evidence of unsafe habits, conduct, or practices.**
+ 
+@@ -124,7 +126,7 @@
+ 6. **The Truth Ledger** — the centerpiece: every material record category | who holds it | why it exists (the business reality that guarantees it) | what it will show | the procedural vehicle | timing trigger. **This is why a defendant reading the Playbook understands concealment is untenable.**
+ 7. **The Pressure Campaign** — sequenced 30/60/90: preservation letters (day 0, including **third-party tracking vendors, whose retention is short**), first-wave discovery (including **broker-to-driver communications and tracking logs**), Rule 45 subpoenas (shipper, TMS vendor, factor, ELD, **vetting vendors — Carrier411 access logs first**, candidate brokers), vetting-file demands, deficiency triggers wired to motion-to-compel drafts, 30(b)(6) topics, deposition order. Every ask states which Truth Ledger row it collects and which finding it converts from intelligence to evidence.
+ 8. **Legal Posture** — jurisdiction-specific, session-verified: FAAAA preemption state after *Montgomery*; **the forum's apportionment statute and joint-and-several threshold**; control/employer doctrine in the controlling circuit; § 14916 readiness against the Landstar line; network-liability theories; anticipated defenses and the counters this record supports.
+-9. **What This Record Sets Up** — case-value drivers (**including what the control theory is worth: the difference between a several share and the whole judgment**), focus-group-ready themes, settlement-leverage narrative, and the credit line: the $1,500 BIR fee credits in full against the first focus group.
++9. **What This Record Sets Up** — case-value drivers (**including what the control theory is worth: the difference between a several share and the whole judgment**), focus-group-ready themes, settlement-leverage narrative, and the credit line: the USD 2,500 BIR fee credits in full against the focus group fee, on the terms in `references/service-collateral.md`.
+ 10. **Methodology, Sources & Limitations** — modules run and screened out with reasons; source log; the caveat block from `freight-federal-record/references/caveats.md`; the authentication boundary; the verification statement.
+ 
+ ---
+@@ -148,7 +150,7 @@
+ - **Pool figures carry their guardrails** — name-variant breakdown, per-power-unit normalization, small-fleet cut, sample-not-census. Never a bare total.
+ - **Verdicts are described accurately.** A verdict is not a final adjudication. Where a reported verdict is subject to post-trial motions or appeal, say so. Where a reconstruction of apportionment arithmetic is ours rather than a source's, label it.
+ - **The law is verified, never remembered.** §8 is written only from module 9 output produced in the current session.
+-- **Flat fee, full work-up.** Never scale effort to the fee. The $1,500 is a trial-basis price for a premium product; the product is what earns the focus group.
++- **Flat fee, full work-up.** Never scale effort to the fee. The USD 2,500 is the standing price of a premium product; the product is what earns the focus group.
+ - **The authentication boundary is absolute.** Nothing OSINT-sourced is represented as pleading-ready. The Playbook's power is that it routes every finding to an admissible-evidence pathway.
+ 
+ ### Industry-source handling — the Carpenter rule
+diff -ru a/broker-intelligence-research/references/commercial-data-layer.md b/broker-intelligence-research/references/commercial-data-layer.md
+--- a/broker-intelligence-research/references/commercial-data-layer.md	2026-10-01 09:10:03.105586400 +0000
++++ b/broker-intelligence-research/references/commercial-data-layer.md	2026-10-01 09:10:03.108409189 +0000
+@@ -28,7 +28,7 @@
+ An expert who holds the licensed MCMIS subscription file runs the equipment analysis, and the opinion arrives in admissible form with a witness attached.
+ 
+ - **Best because** the output is testimony, not intelligence. It crosses the authentication boundary this service otherwise cannot cross
+-- **Costs** expert fees against a $1,500 work-up — so this is a recommendation *in* the Playbook, not a step *of* it
++- **Costs** expert fees against a $2,500 work-up — so this is a recommendation *in* the Playbook, not a step *of* it
+ - **Route it** through §7 (Pressure Campaign) as a retention recommendation with the specific questions the expert should be asked, and through §9 as a case-value driver
+ - The Playbook's job is to make the retention obvious and specific: *here is the question, here is why the free record cannot answer it, here is what the answer is worth*
+ 
+@@ -38,7 +38,7 @@
+ 
+ - **Best because** the marginal cost per case approaches zero across a caseload, and results arrive in-session rather than on an expert's schedule
+ - **Worst because** the output is vendor analysis, not a government record — it inherits every limitation §3 describes
+-- **The economics are not close.** Platform subscriptions in this market run roughly $20–$300/month. Against a $1,500 flat fee, a top-tier seat is a fraction of one engagement. Rebuilding equivalent capability in-house is not a serious alternative and should not be proposed as one
++- **The economics are not close.** Platform subscriptions in this market run roughly $20–$300/month. Against a $2,500 flat fee, a top-tier seat is a fraction of one engagement. Rebuilding equivalent capability in-house is not a serious alternative and should not be proposed as one
+ 
+ ### Path C — Licensed MCMIS subscription file, in-house
+ 
+diff -ru a/broker-intelligence-research/references/intake-checklist.md b/broker-intelligence-research/references/intake-checklist.md
+--- a/broker-intelligence-research/references/intake-checklist.md	2026-10-01 09:10:03.105564524 +0000
++++ b/broker-intelligence-research/references/intake-checklist.md	2026-10-01 09:10:03.108308362 +0000
+@@ -45,7 +45,7 @@
+ 2. Confirm the four anchors (carrier identity, date of loss, geography, venue). Ask Paul once if any anchor is missing; otherwise proceed.
+ 3. Gap-fill what FocusFirst can retrieve without the client (crash report, FMCSA identity resolution, UCC-1s, docket pulls).
+ 4. Serialize anything over ~25 pages (litigation-document-serializer) before analysis.
+-5. Confirm fee status ($1,500 — invoiced/paid) and target delivery date in the log.
++5. Confirm the engagement email went out before work began, and fee status ($2,500 — invoiced/paid) and target delivery date in the log.
+ 
+ ## Client-facing document notes
+ 
+diff -ru a/broker-intelligence-research/references/playbook-template.md b/broker-intelligence-research/references/playbook-template.md
+--- a/broker-intelligence-research/references/playbook-template.md	2026-10-01 09:10:03.105673738 +0000
++++ b/broker-intelligence-research/references/playbook-template.md	2026-10-01 09:10:03.108651046 +0000
+@@ -118,7 +118,7 @@
+ - Where module 12 ran: the value of a **direct-negligence count against the carrier surviving an admission of vicarious liability**, which varies sharply by state and is frequently what decides whether the theory is worth pleading at all.
+ - The focus-group-ready themes: three to five one-line theme statements a jury could carry (diffusion of responsibility; the checkbox vet; the scorecard that measured speed but not safety; nobody at any handoff looked). Note explicitly that these are hypotheses for testing, not conclusions.
+ - Settlement-leverage narrative: what the defense sees when this record is assembled, and when in the campaign the leverage peaks.
+-- The engagement bridge, verbatim mechanics: *the $1,500 Broker Intelligence Research fee credits in full against the first focus group on this case.* One sentence on what the focus group tests that this record cannot answer.
++- The engagement bridge, verbatim mechanics: *the $2,500 Broker Intelligence Research fee credits in full against the focus group fee on this case (one time, this case, within twelve months).* One sentence on what the focus group tests that this record cannot answer.
+ 
+ ## § 10 — Methodology, Sources & Limitations
+ 
+diff -ru a/broker-intelligence-research/references/service-collateral.md b/broker-intelligence-research/references/service-collateral.md
+--- a/broker-intelligence-research/references/service-collateral.md	2026-10-01 09:10:03.105658150 +0000
++++ b/broker-intelligence-research/references/service-collateral.md	2026-10-01 09:10:03.108619854 +0000
+@@ -4,12 +4,14 @@
+ 
+ ## Commercial terms (fixed unless Paul changes them)
+ 
+-- **Price:** $1,500 flat, per case. Trial-basis pricing — Paul is introducing the service to select clients.
++- **Price:** $2,500 flat, per case. This is the rate card's Tier 1 (Supply Chain Research & Discovery Support) price, effective 2026-07-28; it replaces the $1,500 trial-basis price. Source of truth: `engagement-letter/references/rate-card.md`.
+ - **What it buys:** the complete supply-chain accountability work-up and the Supply Chain Accountability Playbook (.docx), with module artifacts included (carrier fitness snapshot, and as applicable: broker intelligence memo, double-broker screen, OSI pattern report).
+ - **Fee character:** a full fee for a completed work-up, not a retainer. No separately billed expenses in the standard engagement.
+-- **The credit:** if the client takes the case forward with FocusFirst, **the full $1,500 credits against their first focus group on the same case.** (Rates it credits against: the $6,000 + costs human focus group, or the $7,500 bundled initial retention, which includes the first focus group. The credit applies once, to the first engagement on that case that includes a focus group.)
++- **Included consultation:** three working calls and three written recommendation rounds within 90 days of the engagement email. Beyond that: Extended Consultation Block $1,200 (three calls + one written round), hourly $450, and Paul says so before anything goes on the clock.
++- **The credit:** if the client takes the case forward with FocusFirst, **the full $2,500 credits against the focus group fee on the same case.** Four limits, all load-bearing: one time, this case, non-stacking, within twelve months. It credits against the fee only — recruiting and participant costs still pass through at cost and are never absorbed. It is invoiced as a visible discount line, never a silent reduced invoice. (Focus group rate: $5,000 + recruiting + participants. The $6,000 focus group, the $7,500 survey, and the $7,500 bundle are retired. A quote that predates the rate card, such as Wilson's $6,000 focus group, is honored as quoted.)
++- **What the client actually pays:** research only, $2,500. Research then focus group, with the credit: $2,500 then $2,500 in fees, plus $3,000–$4,000 in recruiting and participant costs, so $8,000–$9,000 all-in. Say the all-in out loud on the call before the engagement email goes out.
+ - **Positioning line:** the work-up pays for itself twice — once in what it finds, and again when it credits against the focus group.
+-- **Select clients, trial basis:** offered by invitation. Scarcity is real, not manufactured — keep that tone.
++- **Select clients:** offered by invitation. Scarcity is real, not manufactured — keep that tone. (The "trial basis" framing is retired with the $1,500 price. Paul to confirm whether invitation-only stays.)
+ 
+ ## Service one-pager — content beats (client-facing docx)
+ 
+@@ -20,7 +22,7 @@
+ 3. **The service (2–3 sentences):** Send the crash report and whatever load paper you have. FocusFirst runs the full work-up: who actually moved the load, who selected the carrier, what every selecting party could have seen on the date of loss, whether the load was double-brokered, and what each entity in the chain is holding.
+ 4. **The deliverable:** the Supply Chain Accountability Playbook — the scheme named on page one; the date-of-loss carrier fitness record; the Truth Ledger (every material record, who holds it, why it exists, and the instrument that gets it); the sequenced 30/60/90 pressure campaign; the jurisdiction-checked legal posture. *Built so the defense understands that every document we name is coming out — the only question is when.*
+ 5. **The intelligence behind it (1–2 sentences):** BIR runs on FocusFirst's standing intelligence — daily FMCSA monitoring and the industry's insider channels — plus government-source-of-record data pulled fresh for your case and your date of loss.
+-6. **The price:** $1,500 flat per case. Full fee for a completed work-up, not a retainer. Credits in full against your first focus group if the case moves forward with FocusFirst.
++6. **The price:** $2,500 flat per case. Full fee for a completed work-up, not a retainer. Credits in full against the focus group fee if the case moves forward with FocusFirst, within twelve months.
+ 7. **What to send:** the Tier 1 list, one line: crash report (or its number), date of loss, carrier name or door placard, venue, and any load paperwork you have. Gaps are our job, not your delay.
+ 8. **The bar (closer):** one line in Paul's register — bold claim, plainly made (e.g., *"If a party in that chain looked away, this work-up will name them, date it, and hand you the campaign that proves it."*).
+ 9. **Contact block:** Paul Wilkins | FocusFirst AI • Litigation Strategy + AI + Focus Groups • paul@focusfirst.ai | 225.270.6667
+@@ -38,9 +40,9 @@
+ 
+ You've got [case short name] sitting on a chain nobody upstream wants to talk about, so here's how I'd propose we start.
+ 
+-I've opened a new service at FocusFirst for a handful of clients — Broker Intelligence Research. Flat $1,500 for the case. For that, I run the full supply-chain work-up: who actually moved the load, who picked the carrier, what the parties doing the picking could have seen on the day of the wreck, whether the load was double-brokered, and what every company in that chain is still holding. It comes back to you as one deliverable — the Supply Chain Accountability Playbook — with the discovery campaign already sequenced.
++I've opened a new service at FocusFirst for a handful of clients — Broker Intelligence Research. Flat $2,500 for the case. For that, I run the full supply-chain work-up: who actually moved the load, who picked the carrier, what the parties doing the picking could have seen on the day of the wreck, whether the load was double-brokered, and what every company in that chain is still holding. It comes back to you as one deliverable — the Supply Chain Accountability Playbook — with the discovery campaign already sequenced.
+ 
+-That's a full fee for a completed work-up, not a retainer. And if you take the case forward with FocusFirst, the whole $1,500 credits against your first focus group.
++That's a full fee for a completed work-up, not a retainer. And if you take the case forward with FocusFirst, the whole $2,500 credits against the focus group fee. That fee is $5,000, with recruiting and participant costs billed at cost on top, so I'll walk you through the all-in before we ever get there.
+ 
+ I hope you can tell my objective is to hand you a record that makes the other side understand every document we name is coming out — the only question is when. What's still ahead is putting that story in front of jurors and finding out what it's worth.
+ 
+@@ -59,6 +61,6 @@
+ 
+ ## Talking points (calls, not documents)
+ 
+-- Why $1,500: it prices the trial, not the value — the work-up regularly finds coverage and defendants the file didn't know about. The credit makes it free for every client who goes forward.
++- Why $2,500: it prices the work, not the value — the work-up regularly finds coverage and defendants the file didn't know about. The credit means a client who goes forward pays nothing extra for it: research plus focus group costs the same $5,000 in fees as the focus group alone.
+ - Why now: in May 2026 the Supreme Court held — unanimously — that brokers can be sued for negligent carrier selection (*Montgomery v. Caribe Transport II*). Chains that were untouchable two years ago are reachable today, the § 14916 fights and network-agency rulings are still moving, and amendment deadlines punish lawyers who look at the chain late.
+ - What it is not: not a records-retrieval service, not a SAFER printout, not a demand-package mill. It is FocusFirst's intelligence discipline pointed at the chain above the driver.
+diff -ru a/engagement-letter/SKILL.md b/engagement-letter/SKILL.md
+--- a/engagement-letter/SKILL.md	2026-10-01 09:10:03.105839287 +0000
++++ b/engagement-letter/SKILL.md	2026-10-01 09:10:03.110773448 +0000
+@@ -55,6 +55,21 @@
+ 
+ ---
+ 
++## Broker Intelligence Research (BIR) is Tier 1
++
++BIR is how Tier 1, Supply Chain Research & Discovery Support, is sold and delivered for commercial motor vehicle and delivery-network cases. The price is the Tier 1 price, **USD 2,500**, with no pass-throughs. It is no longer a USD 1,500 trial-basis product; never quote that number.
++
++For a BIR engagement:
++
++- Use the BIR email template in `broker-intelligence-research/references/service-collateral.md` for the content beats, and this skill for voice, structure, terms block, and Square boilerplate.
++- **Line item name:** `Broker Intelligence Research — [Case Name]`.
++- **Included**, in the terms block: the Supply Chain Accountability Playbook (.docx) and its module artifacts as applicable (carrier fitness snapshot, broker intelligence memo, double-broker screen, OSI pattern report), plus three working calls and three written recommendation rounds within 90 days.
++- **Credit**, in the terms block and in the email: the USD 2,500 credits in full against the focus group fee, one time, this case, non-stacking, within twelve months. It does not credit against recruiting or participant costs.
++- **Disclose the focus group all-in in the email** whenever the credit is mentioned: USD 5,000 fee plus recruiting and participant costs at cost, USD 8,000–USD 9,000 all-in. Say it on the call first.
++- When the focus group is later invoiced, show the credit as a visible discount line referencing the BIR invoice.
++
++---
++
+ ## Why two layers
+ 
+ An invoice is the one document that reliably gets opened, forwarded to a bookkeeper, and paid — so payment must confirm terms the client has actually seen. But the terms worth having (confidentiality, consulting-expert status, credit conditions, cancellation exposure) run longer than a billing document should carry.
+@@ -72,7 +87,7 @@
+ - **Recipient name** — first name only, the way Paul addresses the lawyer.
+ - **Recipient firm** — optional if context establishes it.
+ - **Case name** — short reference (e.g. "Benedict v. Johnson Bros.").
+-- **Which offering** — Tier 1 research, focus group, or focus group with the Tier 1 credit applied.
++- **Which offering** — Tier 1 research (for a CMV or delivery-network case this is Broker Intelligence Research; see the BIR section below), focus group, or focus group with the Tier 1 credit applied.
+ - **Current scope** (optional) — default: *"the kind of work-up and support you're seeing so far in [case]"*.
+ - **Forward scope** (optional) — default: *"a level of focus group feedback that will serve as the heart of your case — brings it to life"*.
+ 
+diff -ru a/engagement-letter/references/rate-card.md b/engagement-letter/references/rate-card.md
+--- a/engagement-letter/references/rate-card.md	2026-10-01 09:10:03.105913698 +0000
++++ b/engagement-letter/references/rate-card.md	2026-10-01 09:10:03.110970489 +0000
+@@ -8,7 +8,7 @@
+ 
+ | # | Offering | Fee | Pass-throughs (billed at cost) |
+ |---|---|---|---|
+-| 1 | Supply Chain Research & Discovery Support | **$2,500** | None |
++| 1 | Supply Chain Research & Discovery Support *(delivered as Broker Intelligence Research for CMV and delivery-network cases)* | **$2,500** | None |
+ | 2 | Focus Group | **$5,000** | Recruiting $1,500–$2,000 (Nelson Recruiting) · Participants $1,500–$2,000 |
+ 
+ Extended Consultation Block: **$1,200** (three working calls + one written round). Hourly beyond that: **$450**.
+@@ -90,4 +90,4 @@
+ 
+ ## Downstream cleanup
+ 
+-The `engagement-letter` skill still carries retired defaults ($6,000 focus group, $7,500 standalone survey, $7,500 bundle) and has corrupted price tokens in its body — $7,500 renders as "the,500" and $6,000 as "for,000". The reference file `benedict-example.md` is intact. Needs rebuilding against this card.
++The `engagement-letter` skill has been rebuilt against this card (it now stores amounts as "USD 5,000" to avoid the price-corruption bug). Remaining cleanup: the `broker-intelligence-research` skill carried the retired $1,500 trial price, the $6,000 focus group, and the $7,500 bundle; its references are updated to $2,500 and the credit mechanics above. `benedict-example.md` is voice-only and intentionally keeps its retired numbers.
