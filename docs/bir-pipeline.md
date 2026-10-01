@@ -68,7 +68,7 @@ Anonymize firm, client, and parties unless written permission is on file.
 
 ## Open items
 
-- **Intake endpoint.** `ENDPOINT` in `bir-intake.html` is empty. Deploy the receiving script, set the URL, and test a submission end to end before publishing. Until then the form says it is not configured rather than pretending to submit.
+- **Intake endpoint.** `ENDPOINT` in `bir-intake.html` is empty. The receiver is written (`apps-script/`); deploy it per `apps-script/README.md`, set the URL, and test a submission end to end before publishing. Until then the form says it is not configured rather than pretending to submit.
 - **Price consistency.** The `broker-intelligence-research` skill still describes the service as $1,500 on a trial basis. Update it to $2,500 so the Playbook, engagement letter, and website agree.
 - **Engagement letter.** Confirm the `engagement-letter` template carries the $2,500 flat fee and the scope of the module set.
 - **Confidentiality.** The intake deliberately takes no client-identifying detail and no attachments. Decide the secure document-sharing channel for stage 5.
