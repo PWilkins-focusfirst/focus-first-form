@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broker Intelligence Research Intake - FocusFirst</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f2f4f7;
+            color: #1f2933;
+            padding: 20px;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .header { background: #14213d; color: white; padding: 30px 40px; }
+        .header h1 { font-size: 1.8em; margin-bottom: 8px; }
+        .header p { opacity: 0.85; line-height: 1.5; }
+        .form-section { padding: 30px 40px 40px; }
+        fieldset { border: none; margin-bottom: 30px; }
+        legend {
+            font-size: 1.1em; font-weight: 700; color: #14213d;
+            border-bottom: 2px solid #fca311; padding-bottom: 6px;
+            margin-bottom: 18px; width: 100%;
+        }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.95em; }
+        .hint { font-weight: 400; color: #616e7c; font-size: 0.85em; }
+        input[type=text], input[type=email], input[type=tel], input[type=date],
+        input[type=url], select, textarea {
+            width: 100%; padding: 10px 12px; border: 2px solid #d9dee4;
+            border-radius: 6px; font-size: 16px; font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #fca311; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 560px) { .row { grid-template-columns: 1fr; } .form-section, .header { padding: 24px; } }
+        .check { font-weight: 400; display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+        .check input { margin-top: 4px; }
+        .notice {
+            background: #fff8e6; border-left: 4px solid #fca311;
+            padding: 14px 16px; border-radius: 4px; font-size: 0.9em;
+            line-height: 1.5; margin-bottom: 24px;
+        }
+        .submit-btn {
+            background: #14213d; color: white; padding: 14px 30px; border: none;
+            border-radius: 6px; font-size: 17px; font-weight: 600; cursor: pointer; width: 100%;
+        }
+        .submit-btn:disabled { opacity: 0.6; cursor: default; }
+        .result { margin-top: 20px; padding: 18px; border-radius: 6px; display: none; line-height: 1.5; }
+        .result.ok { background: #e6f4ea; }
+        .result.err { background: #fdecea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Broker Intelligence Research</h1>
+            <p>Supply-chain accountability work-up for commercial motor vehicle and delivery-network cases. Flat fee: <strong>$2,500 per case</strong>. Complete this intake so work can begin without a round of follow-up questions.</p>
+        </div>
+        <div class="form-section">
+            <div class="notice">
+                <strong>Confidentiality.</strong> Do not enter client names, dates of birth, or medical details on this form. Use the case caption or initials only. Case documents are shared through the secure link you provide below or through the link we send after intake, never as attachments to this form.
+            </div>
+            <form id="birForm">
+                <fieldset>
+                    <legend>1. Firm and attorney</legend>
+                    <div class="row">
+                        <div class="form-group"><label for="firm">Firm *</label><input type="text" id="firm" name="firm" required></div>
+                        <div class="form-group"><label for="attorney">Lead attorney *</label><input type="text" id="attorney" name="attorney" required></div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
+                        <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required></div>
+                    </div>
+                    <div class="form-group"><label for="staff">Paralegal / case contact <span class="hint">(optional)</span></label><input type="text" id="staff" name="staff"></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. The case</legend>
+                    <div class="form-group"><label for="caption">Case caption or short name * <span class="hint">(initials only for the client)</span></label><input type="text" id="caption" name="caption" required></div>
+                    <div class="row">
+                        <div class="form-group"><label for="venue">Court / venue *</label><input type="text" id="venue" name="venue" required placeholder="e.g. Jefferson County, AL"></div>
+                        <div class="form-group"><label for="dol">Date of loss *</label><input type="date" id="dol" name="dol" required></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="posture">Current posture *</label>
+                        <select id="posture" name="posture" required>
+                            <option value="">Select posture</option>
+                            <option value="pre_suit">Pre-suit</option>
+                            <option value="filed_early">Filed, early discovery</option>
+                            <option value="discovery_stalled">Discovery stalled or deficient</option>
+                            <option value="low_offer">Low offer on the table</option>
+                            <option value="mediation_set">Mediation scheduled</option>
+                            <option value="trial_set">Trial date set</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="form-group"><label for="keyDate">Next key date <span class="hint">(mediation, trial, or deadline)</span></label><input type="date" id="keyDate" name="keyDate"></div>
+                        <div class="form-group"><label for="severity">Injury severity <span class="hint">(one line)</span></label><input type="text" id="severity" name="severity" placeholder="e.g. TBI, permanent impairment"></div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. The supply chain, as far as you know</legend>
+                    <div class="row">
+                        <div class="form-group"><label for="carrier">Motor carrier</label><input type="text" id="carrier" name="carrier"></div>
+                        <div class="form-group"><label for="usdot">USDOT / MC number</label><input type="text" id="usdot" name="usdot"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="brokerKnown">Is a freight broker, shipper, or delivery-network company already identified? *</label>
+                        <select id="brokerKnown" name="brokerKnown" required>
+                            <option value="">Select</option>
+                            <option value="yes_named">Yes, and already named as a defendant</option>
+                            <option value="yes_not_named">Yes, but not yet named</option>
+                            <option value="suspected">Suspected, not confirmed</option>
+                            <option value="no">No, only the carrier is known</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="chainNotes">What do you know about the load or delivery? <span class="hint">(origin, destination, shipper, platform, app, anything)</span></label><textarea id="chainNotes" name="chainNotes" rows="3"></textarea></div>
+                    <div class="form-group"><label for="adverse">All adverse parties <span class="hint">(for conflict check) *</span></label><textarea id="adverse" name="adverse" rows="2" required></textarea></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Materials you can provide</legend>
+                    <label class="check"><input type="checkbox" name="materials" value="crash_report"> Crash / police report</label>
+                    <label class="check"><input type="checkbox" name="materials" value="bol"> Bill of lading or load documents</label>
+                    <label class="check"><input type="checkbox" name="materials" value="rate_con"> Rate confirmation or broker-carrier contract</label>
+                    <label class="check"><input type="checkbox" name="materials" value="pleadings"> Pleadings and discovery responses</label>
+                    <label class="check"><input type="checkbox" name="materials" value="depos"> Deposition transcripts</label>
+                    <label class="check"><input type="checkbox" name="materials" value="eld_dq"> ELD, driver qualification, or maintenance records</label>
+                    <label class="check"><input type="checkbox" name="materials" value="none"> None yet</label>
+                    <div class="form-group" style="margin-top:12px"><label for="link">Secure link to materials <span class="hint">(optional; shared folder with access granted to FocusFirst)</span></label><input type="url" id="link" name="link" placeholder="https://"></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>5. Engagement</legend>
+                    <div class="form-group"><label for="goal">What outcome do you need from this work-up? *</label><textarea id="goal" name="goal" rows="3" required placeholder="e.g. identify the broker before the statute runs; support a motion to compel; leverage for mediation"></textarea></div>
+                    <label class="check"><input type="checkbox" id="feeAck" name="feeAck" required> I understand the Broker Intelligence Research flat fee is $2,500 per case, and that FocusFirst will send an engagement letter for signature before work begins.</label>
+                    <label class="check"><input type="checkbox" id="privAck" name="privAck" required> I have not included client-identifying or privileged detail in this form.</label>
+                </fieldset>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Intake</button>
+            </form>
+            <div id="result" class="result" role="status"></div>
+        </div>
+    </div>
+    <script>
+        // Set to the deployed Google Apps Script (or other) endpoint before publishing.
+        const ENDPOINT = '';
+
+        const form = document.getElementById('birForm');
+        const result = document.getElementById('result');
+        const btn = document.getElementById('submitBtn');
+
+        function show(kind, html) {
+            result.className = 'result ' + kind;
+            result.innerHTML = html;
+            result.style.display = 'block';
+        }
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const fd = new FormData(form);
+            const data = {};
+            for (const [k, v] of fd.entries()) {
+                if (k === 'materials') continue;
+                data[k] = v;
+            }
+            data.materials = fd.getAll('materials');
+            data.service = 'broker_intelligence_research';
+            data.fee = 2500;
+            data.submissionTime = new Date().toISOString();
+
+            if (!ENDPOINT) {
+                show('err', '<strong>Intake endpoint is not configured yet.</strong> Nothing was sent. Please email your details to FocusFirst directly.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+            try {
+                // text/plain avoids a CORS preflight, which Apps Script web apps do not answer.
+                const res = await fetch(ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(data)
+                });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                show('ok', '<strong>Intake received.</strong> We will run a conflict check and send your engagement letter next.');
+                form.reset();
+            } catch (err) {
+                show('err', '<strong>Submission failed.</strong> Nothing was recorded. Please try again or email FocusFirst directly.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Submit Intake';
+            }
+        });
+    </script>
+</body>
+</html>
